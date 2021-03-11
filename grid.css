@@ -1,0 +1,170 @@
+:root{
+--primary:#ddd;
+--light:#fff;
+--dark:#000;
+--shadow:0 1px 5px rgba(104,104,104,0.8);
+}
+html{
+	box-sizing:border-box;
+	margin:10px 50px;
+	font-family:"Black Arial",Gadget,sans-serif;
+	color:var(--dark);
+}
+body{
+	background:#ccc;
+}
+a{
+	text-decoration:none;
+}
+
+.main-navbar ul{
+	display:grid;
+	padding:0;
+	text-align: center;
+	grid-gap:0.8rem;
+	grid-template-columns:repeat(4,1fr);
+	list-style:none;
+}
+.main-navbar a{
+	display:block;
+	padding:0.6rem 1.3rem;
+	background:var(--primary);
+	box-shadow:var(--shadow);
+	text-decoration:none;
+	color:var(--dark);
+	text-transform:uppercase;
+	border-radius:15px;
+font-size:1.1rem;
+transition:background 0.25s;
+}
+.main-navbar a:hover{
+	background:var(--dark);
+	color:var(--light);
+}
+.btn{
+	background:var(--dark);
+	color:var(--light);
+	padding:0.8rem 1.1rem;
+	box-shadow:var(--shadow);
+	transition:background 0.25s;
+	border-radius:5%;
+}
+.btn:hover{
+	background:var(--primary);
+	color:var(--dark);
+	cursor: pointer;
+}
+.top-container{
+	display:grid;
+	grid-gap:20px;
+	grid-template-areas:
+	'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+.showcase{
+	grid-area:showcase;
+	min-height:400px;
+	background:url('my web/DL2/DyingLight2_Art_1.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	padding:3rem;
+	display:flex;
+	flex-direction:column;
+	align-items:start;
+	justify-content:center;
+	box-shadow:var(--shadow);
+}
+.showcase h1{
+	font-size:4rem;
+	margin-bottom:0;
+	color:var(--light);
+}
+.showcase p{
+	font-size:1.3rem;
+	margin-top:0;
+	color:var(--light);
+}
+.top-box-a{
+	grid-area:top-box-a;
+	display:grid;
+	align-items: center;
+	justify-items:center;
+	padding:1.3rem;
+	background:var(--primary);
+	box-shadow:var(--shadow);
+}
+
+.top-box-b{
+	grid-area:top-box-b;
+	display:grid;
+	align-items: center;
+	justify-items:center;
+	padding:1.3rem;
+	background:var(--primary);
+	box-shadow:var(--shadow);
+}
+.price{
+	font-size:2.5rem;
+}
+.boxes{
+	margin-top:20px;
+	display:grid;
+	grid-gap:20px;
+	grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+.box{
+	text-align:center;
+	padding: 1.5rem 2rem;
+	background:var(--primary);
+	box-shadow:var(--shadow);
+}
+.info{
+	display:grid;
+	grid-gap:20px;
+	grid-template-columns:repeat(2,1fr);
+	padding:3rem;
+    background:var(--primary);
+    box-shadow:var(--shadow);
+    margin-top:20px;
+}
+footer{
+	background:var(--dark);
+	color:var(--light);
+	margin-top:3rem;
+	padding:1rem;
+	text-align:center;
+}
+@media(max-width:700px){
+.main-navbar ul{
+	grid-template-columns:1fr 1fr;
+	grid-template-rows:1fr 1fr;
+}
+.top-container{
+	grid-template-areas:
+	'showcase showcase'
+	'top-box-a top-box-b';
+}
+.showcase h1{
+	font-size:2.5rem;
+}
+.info{
+	grid-template-columns:1fr;
+}
+.info .btn{
+	display:block;
+	text-align:center;
+	margin:auto;
+}
+}
+@media(max-width:500px){
+.top-container{
+	grid-template-areas:
+	'showcase'
+	'showcase'
+	'top-box-a'
+	'top-box-b';
+}
+.main-navbar ul{
+	grid-template-columns:1fr;
+}
